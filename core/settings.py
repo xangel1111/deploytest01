@@ -29,6 +29,9 @@ ALLOWED_HOSTS = [
   'deploytest01.onrender.com'
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://deploytest01.onrender.com"
+]
 
 # Application definition
 
