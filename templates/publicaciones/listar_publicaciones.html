@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Publicaciones{% endblock %}
+{% block content %}
+    <h2>Lista de Publicaciones</h2>
+    <a href="{% url 'crear_publicacion' %}">Crear Publicación</a>
+    <ul>
+        {% for publicacion in publicaciones %}
+            <li>
+                <strong>{{ publicacion.titulo }}</strong> - {{ publicacion.usuario.nombre }} ({{ publicacion.fecha_publicacion }})
+                <p>{{ publicacion.contenido }}</p>
+                <a href="{% url 'editar_publicacion' publicacion.id %}">Editar</a>
+                <a href="{% url 'eliminar_publicacion' publicacion.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
